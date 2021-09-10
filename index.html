@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Time Entries</title>
 </head>
-<body bgcolor="gray">
+<body>
 	<div id="data">
 	<h1 id="title">Title</h1>
 		<ul id="Entries">
@@ -18,11 +18,14 @@
 				<td><button onclick="copyData()">Copy Data</button></td>
 			</tr>
 			<tr>
-				<td><label for="startTime">Started: </label><input type='time' name="startTime"> - <input type="time" name="endTime"><input type="text" name="task"></td>
+				<td><hr></td>
+			</tr>
+			<tr>
+				<td><label for="startTime">Started: </label><input type='time' name="startTime"> - <label for="startTime">Finished: </label><input type="time" name="endTime"><input type="text" name="task"></td>
 				<td><button onclick="addEntry()">Add</button></td>
 			</tr>
 			<tr>
-				<td><label for="startTime">Finished: </label><input type="date" name="title"></td>
+				<td><label for="title">Title(Date): </label><input type="date" name="title"></td>
 				<td><button onclick="addHeading()">Add</button></td>
 			</tr>
 		</table>
