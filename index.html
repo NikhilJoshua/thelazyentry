@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Time Entries</title>
+</head>
+<body bgcolor="gray">
+	<div id="data">
+	<h1 id="title">Title</h1>
+		<ul id="Entries">
+		</ul>
+	</div>
+		<table>
+			<tr>
+				<td>Copy</td>
+				<td><button onclick="copyData()">Copy Data</button></td>
+			</tr>
+			<tr>
+				<td><input type='time' name="startTime"> - <input type="time" name="endTime"><input type="text" name="task"></td>
+				<td><button onclick="addEntry()">Add</button></td>
+			</tr>
+			<tr>
+				<td><input type="date" name="title"></td>
+				<td><button onclick="addHeading()">Add</button></td>
+			</tr>
+		</table>
+	
+	<script src="script.js"></script>
+</body>
+</html>
