@@ -10,6 +10,10 @@ function addEntry() {
 	var Entries = document.getElementById('Entries');
 	var task = document.getElementsByName('task');
 	var element = document.createElement('li');
+	if(startTime[0].value == '' || endTime[0].value == ''){
+		alert('Please enter start & finish time');
+		return;
+	}
 	element.setAttribute('draggable', 'true');
 	element.innerHTML = '<b>[' + formatTime(startTime[0].value) + ' - ' + formatTime(endTime[0].value) + ']</b> <i>' + task[0].value + '</i>';
 	startTime[0].value = endTime[0].value;
@@ -28,7 +32,7 @@ function formatDate(date) {
 
 function formatTime(t){
 	var [h,m] = t.split(":");
-	  return ((h%12<10)? '0' : '') + (h%12 + 12*(h%12==0)) +":"+m+ ((h>=12)? 'PM' : 'AM');
+	  return ((h%12<10 && h!=12)? '0' : '') + (h%12 + 12*(h%12==0)) +":"+m+ ((h>=12)? 'PM' : 'AM');
 }
 
 function copyData() {
