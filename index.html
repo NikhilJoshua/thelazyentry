@@ -5,31 +5,58 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Time Entries</title>
+	<style>
+		
+		#data {
+			background-color: antiquewhite;
+			border-radius: 10px;
+			min-width: 400px;
+			width: fit-content;
+			padding: 10px 20px;
+			margin: 0 auto;
+		}
+		#fields {
+			margin: 0 auto;
+		}
+		#fields table {
+			margin: 0 auto;
+			
+		}
+		#fields table td {
+			vertical-align: top;
+		}
+	</style>
 </head>
-<body>
+<body >
+	<h1 align="center">The Lazy Entry</h1>
 	<div id="data">
 	<h1 id="title">Title</h1>
 		<ul id="Entries">
 		</ul>
 	</div>
+
+	<div id="fields">
 		<table>
 			<tr>
-				<td>Copy</td>
-				<td><button onclick="copyData()">Copy Data</button></td>
-			</tr>
-			<tr>
 				<td><hr></td>
-			</tr>
+			</tr>	
 			<tr>
-				<td><label for="startTime">Started: </label><input type='time' name="startTime"> - <label for="startTime">Finished: </label><input type="time" name="endTime"><label for="task"> Task: </label><input type="text" name="task"></td>
-				<td><button onclick="addEntry()">Add</button></td>
-			</tr>
-			<tr>
-				<td><label for="title">Title(Date): </label><input type="date" name="title"></td>
+				<td  align="center"><label for="title">Title(Date): </label><input type="date" name="title"></td>
 				<td><button onclick="addHeading()">Add</button></td>
 			</tr>
+			<tr>
+				<td valign="top"><label for="startTime">Started: </label><input type='time' name="startTime"><button onclick="setStartTime()" title="Set to current time">T</button>- <label for="endTime">Finished: </label><input type="time" name="endTime"><button onclick="setEndTime()" title="Set to current time">T</button><label for="task"> Task: </label><textarea name = "task"></textarea></td>
+				<td><button onclick="addEntry()">Add</button></td>
+			</tr>
+			<tr><td><hr></td></tr>
+			<tr>
+				<td colspan="2" align="center"><button onclick="copyData()" title="Copy the Data in Rich Text and Plain Text format" >Copy Data</button></td>
+			</tr>
+			
+			
+			
 		</table>
-	
+	</div>
 	<script src="script.js"></script>
 </body>
 </html>

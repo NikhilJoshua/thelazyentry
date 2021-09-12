@@ -21,6 +21,24 @@ function addEntry() {
 	Entries.append(element);
 }
 
+function setStartTime() {
+	var d = new Date();
+	var startTime = document.getElementsByName('startTime');
+	h = String(d.getHours());
+	m = String(d.getMinutes());
+	startTime[0].value = ((Number(h) < 10) ? '0' : '') + h + ':' + ((Number(m) < 10) ? '0':'' )+ m;
+	console.log(((h < 10) ? '0' : '') + h + ':' + ((m < 10) ? '0':'' )+ m);
+}
+
+function setEndTime() {
+	var d = new Date();
+	var endTime = document.getElementsByName('endTime');
+	h = String(d.getHours());
+	m = String(d.getMinutes());
+	endTime[0].value = ((Number(h) < 10) ? '0' : '') + h + ':' + ((Number(m) < 10) ? '0':'' )+ m;
+
+}
+
 function formatDate(date) {
 	if(date == ''){
 		const d = new Date();
