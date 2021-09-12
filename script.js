@@ -41,8 +41,8 @@ function setEndTime() {
 
 function formatDate(date) {
 	if(date == ''){
-		const d = new Date();
-		return monthNames[d.getMonth()] + ' ' + d.getDay() + ', ' + d.getFullYear();
+		var d = new Date();
+		return monthNames[d.getMonth()] + ' ' + d.getDate() + ', ' + d.getFullYear();
 	}
 	var [y,m,d] = date.split('-');
 	return monthNames[Number(m-1)] + ' ' + d + ', ' + y;
