@@ -5,58 +5,81 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Time Entries</title>
-	<style>
-		
-		#data {
-			background-color: antiquewhite;
-			border-radius: 10px;
-			min-width: 400px;
-			width: fit-content;
-			padding: 10px 20px;
-			margin: 0 auto;
-		}
-		#fields {
-			margin: 0 auto;
-		}
-		#fields table {
-			margin: 0 auto;
-			
-		}
-		#fields table td {
-			vertical-align: top;
-		}
-	</style>
+	<link rel="stylesheet" href="css/style.css">
 </head>
-<body >
-	<h1 align="center">The Lazy Entry</h1>
-	<div id="data">
-	<h1 id="title">Title</h1>
-		<ul id="Entries">
-		</ul>
-	</div>
 
-	<div id="fields">
-		<table>
-			<tr>
-				<td><hr></td>
-			</tr>	
-			<tr>
-				<td  align="center"><label for="title">Title(Date): </label><input type="date" name="title"></td>
-				<td><button onclick="addHeading()">Add</button></td>
-			</tr>
-			<tr>
-				<td style="display: flex;"><label for="startTime">Started: </label><input type='time' name="startTime"><button onclick="setStartTime()" title="Set to current time">T</button>- <label for="endTime">Finished: </label><input type="time" name="endTime"><button onclick="setEndTime()" title="Set to current time">T</button><label for="task"> Task: </label><textarea placeholder="Enter html/Plain Text" name = "task"></textarea></td>
-				<td><button onclick="addEntry()">Add</button></td>
-			</tr>
-			<tr><td><hr></td></tr>
-			<tr>
-				<td colspan="2" align="center"><button onclick="copyData()" title="Copy the Data in Rich Text and Plain Text format" >Copy Data</button></td>
-			</tr>
-			
-			
-			
-		</table>
+<body >
+	<h1 class="heading-entry">The Lazy Entry</h1>
+	<div class="warning-message">
+		<h4>
+			Please Fill all the required fields**
+		</h4>
 	</div>
-	<script src="script.js"></script>
+	<div class="warning-message-time">
+		<h4>
+			End time cannot be lower than start time**
+		</h4>
+	</div>
+	<div class="container-wrapper">
+		<div id="fields">
+			<table class="data-fields">
+				<tr class="fields-wrapper">
+					<td>
+						<label for="title">Title(Date): </label>
+						<input type="date" name="title" id="date-picker">
+					</td>
+					<td>
+						<button onclick="addHeading()">Add Date</button>
+					</td>
+				</tr>
+				<tr>
+					<td><hr></td>
+				</tr>
+				
+
+				<tr class="fields-wrapper">
+					<td>
+						<label for="startTime">Start: </label>
+						<input type='time' name="startTime">
+						<button onclick="setStartTime()" title="Set to current time">Select Current Time</button>
+					</td>
+					<td>
+						<label for="endTime">End: </label>
+						<input type="time" name="endTime">
+						<button onclick="setEndTime()" title="Set to current time">Select Current Time</button>
+					</td>
+				</tr>
+				<tr class="fields-wrapper">
+					
+				</tr>
+				<tr class="fields-wrapper">
+					<td>
+						<label for="task"> Task: </label>
+					</td>
+					<td>
+						<textarea placeholder="Enter Work Detail" name="task" class="task"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<button onclick="addEntry()" class="task-add" >Add</button>
+					</td>
+				</tr>
+				
+				<tr><td><hr></td></tr>
+			</table>
+		</div>
+
+		<div id="data">
+			<h1 id="title">Date</h1>
+				<ul id="Entries">
+				</ul>
+		</div>
+	</div>
+	<div class="copy-wrapper" >
+		<button onclick="copyData()" title="Copy the Data in Rich Text and Plain Text format" >Copy Data</button>
+	</div>
+	<script src="js/script.js"></script>
 </body>
+
 </html>
