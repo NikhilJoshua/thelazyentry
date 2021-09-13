@@ -40,23 +40,29 @@
 				<tr class="fields-wrapper">
 					<td>
 						<label for="startTime">Start: </label>
+						<p class="labelStartTime">*</p>
 						<input type='time' name="startTime">
 						<button onclick="setStartTime()" title="Set to current time">Select Current Time</button>
 					</td>
+					
 					<td>
-						<label for="atEOD" title="Doesn't Change value to null (Useful when adding all entries at once)">Relative: </label>
-						<input type="checkbox" id = "atEOD" name="atEOD" title="Doesn't Change value to null (Useful when adding all entries at once)">
-						<label for="endTime">End: </label>
+						<label for="endTime" >End: </label>
+						<p class="labelEndTime">*</p>
 						<input type="time" name="endTime">
 						<button onclick="setEndTime()" title="Set to current time">Select Current Time</button>
 					</td>
+					<td>
+						<input type="checkbox" id = "atEOD" name="atEOD" title="Doesn't Change value to null (Useful when adding all entries at once)">
+						<label for="atEOD" title="Doesn't Change value to null (Useful when adding all entries at once)">Relative End Time: </label>
+					</td>
 				</tr>
-				<tr class="fields-wrapper">
+				<tr >
 					
 				</tr>
 				<tr class="fields-wrapper">
 					<td>
 						<label for="task"> Task: </label>
+						<p class="labelTask">*</p>
 					</td>
 					<td>
 						<textarea placeholder="Enter Work Detail" name="task" class="task"></textarea>

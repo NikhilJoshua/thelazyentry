@@ -3,7 +3,7 @@
     justify-content: space-evenly;
     text-align: center;
 }
-.container-wrapper label,input,textarea,button{
+.container-wrapper label,input,textarea,button,p{
     font-size:medium;
 }
 .data-fields tr,
@@ -17,6 +17,11 @@
 
 .fields-wrapper{
     display: flex;
+    align-items: center;
+}
+.justify-end{
+    text-align: right;
+    margin-right: 80%;
 }
 .fields-wrapper td{
     padding-left: 2rem;
@@ -35,6 +40,12 @@
     text-align: center;
     color: red;
     display: none;
+}
+.labelStartTime,
+.labelEndTime,
+.labelTask{
+    display: none;
+    color: red ;
 }
 #data {
     background-color: antiquewhite;
