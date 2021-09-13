@@ -35,7 +35,7 @@ function addEntry() {
 	element.setAttribute('draggable', 'true');
 	element.innerHTML = '<b>[' + formatTime(startTime[0].value) + ' - ' + formatTime(endTime[0].value) + ']</b> <i>' + task[0].value + '</i>';
 	startTime[0].value = endTime[0].value;
-	endTime[0].value='';
+	// endTime[0].value=''; Useful when adding all entries at once.(Relative time Navigation)
 	task[0].value = '';
 	Entries.append(element);
 }
