@@ -1,22 +1,41 @@
 var cnt = 0;
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	function addHeading() {
-		var heading = document.getElementsByName('title');
-		document.getElementById('title').innerText = formatDate(heading[0].value);
-	}
+
+var myDate = document.getElementById("date-picker");
+var today = new Date();
+myDate.value = today.toISOString().substr(0, 10);
+
+function addHeading() {
+	var heading = document.getElementsByName('title');
+	document.getElementById('title').innerText = formatDate(heading[0].value);
+}
 function addEntry() {
+	document.getElementsByClassName("warning-message-time")[0].style.display="none";
+	document.getElementsByClassName("warning-message")[0].style.display="none";
+
+
 	var startTime = document.getElementsByName('startTime');
 	var endTime = document.getElementsByName('endTime');
 	var Entries = document.getElementById('Entries');
+	
 	var task = document.getElementsByName('task');
 	var element = document.createElement('li');
+
+
+	if(startTime[0].value>endTime[0].value)
+	{
+		document.getElementsByClassName("warning-message-time")[0].style.display="block";
+		return;
+	}
+
 	if(startTime[0].value == '' || endTime[0].value == '' || task[0].value == ''){
-		alert('Please enter Start, Finished Time & Task');
+		document.getElementsByClassName("warning-message")[0].style.display="block";
 		return;
 	}
 	element.setAttribute('draggable', 'true');
 	element.innerHTML = '<b>[' + formatTime(startTime[0].value) + ' - ' + formatTime(endTime[0].value) + ']</b> <i>' + task[0].value + '</i>';
 	startTime[0].value = endTime[0].value;
+	endTime[0].value='';
 	task[0].value = '';
 	Entries.append(element);
 }
@@ -27,7 +46,6 @@ function setStartTime() {
 	h = String(d.getHours());
 	m = String(d.getMinutes());
 	startTime[0].value = ((Number(h) < 10) ? '0' : '') + h + ':' + ((Number(m) < 10) ? '0':'' )+ m;
-	console.log(((h < 10) ? '0' : '') + h + ':' + ((m < 10) ? '0':'' )+ m);
 }
 
 function setEndTime() {
