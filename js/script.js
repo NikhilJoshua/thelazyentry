@@ -21,6 +21,7 @@ function addEntry() {
 	var task = document.getElementsByName('task');
 	var element = document.createElement('li');
 
+	var atEOD = document.getElementById('atEOD');
 
 	if(startTime[0].value>endTime[0].value)
 	{
@@ -35,7 +36,8 @@ function addEntry() {
 	element.setAttribute('draggable', 'true');
 	element.innerHTML = '<b>[' + formatTime(startTime[0].value) + ' - ' + formatTime(endTime[0].value) + ']</b> <i>' + task[0].value + '</i>';
 	startTime[0].value = endTime[0].value;
-	// endTime[0].value=''; Useful when adding all entries at once.(Relative time Navigation)
+	if(!atEOD.checked)
+		endTime[0].value='';
 	task[0].value = '';
 	Entries.append(element);
 }
