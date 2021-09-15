@@ -9,6 +9,7 @@ function addHeading() {
 	var heading = document.getElementsByName('title');
 	document.getElementById('title').innerText = formatDate(heading[0].value);
 }
+
 function addEntry() {
 	document.getElementsByClassName("warning-message-time")[0].style.display="none";
 	document.getElementsByClassName("warning-message")[0].style.display="none";
@@ -90,6 +91,7 @@ function formatTime(t){
 function copyData() {
 	var data = document.getElementById('data').innerHTML;
 	var datap = document.getElementById('data').innerText;
+	var btn = document.getElementById('copyBtn');
 	// const elem = document.createElement('textarea');
 	// document.body.appendChild(elem);
 	// elem.value = data;
@@ -103,5 +105,5 @@ function copyData() {
 	document.addEventListener("copy", listener);
 	document.execCommand("copy");
 	document.removeEventListener("copy", listener);
-
+	alert('Data Copied!');
 }
