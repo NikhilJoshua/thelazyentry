@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nikhiljoshua.github.io/thelazyentry/sitemap.xml
